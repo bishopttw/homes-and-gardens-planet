@@ -1,0 +1,250 @@
+/* ===== MEDIA QUERIES ===== */
+
+/* Tablet landscape and smaller */
+@media (max-width: 1024px) {
+  .hero-section h1{
+    font-size: 2.2rem;
+  }
+  .hero-section p{
+    font-size: 2rem;
+  }
+  .hero-section lists{
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+  }
+  .hero-section li{
+    font-size: 0.95rem;
+  }
+  .highlights{
+    justify-content: center;
+    gap: 2rem;
+  }
+  .highlight{
+    flex: 1 1 calc(50% - 2rem);
+    max-width: 400px;
+  }
+  /* === SERVICE SECTION === */
+  .service-items{
+    min-height: 250px;
+    min-width: 320px;
+    flex: 1 1 calc(30% - 2rem);
+  }
+  .service-list, .service-list1{
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .portfolio-grid{
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .footer-content{
+    gap: 1.5rem;
+  }
+  .footer-content form input, .footer-content form textarea{
+    width: 100%;
+  }
+}
+
+/* Tablets and mid screens */
+@media (max-width: 1000px) {
+  /* HERO SECTION */
+  .hero-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .hero-section ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+  }
+
+  .hero-section li {
+    font-size: 0.95rem;
+  }
+
+  /* GALLERY */
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .portfolio-grid img {
+    width: 100%;
+    border-radius: 0.5rem;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 2rem 1.5rem;
+  }
+}
+
+
+/* Tablets portrait */
+@media (max-width: 768px) {
+  .hero-section h1{
+    font-size: 2rem;
+    text-align: center;
+  }
+  .hero-section p{
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 1.5;
+  }
+  .about-content{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-content img{
+    width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+  }
+  .portfolio-grid{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .footer-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .contact #contact-form{
+    width: 100%;
+    margin-bottom: 2rem;
+    flex: 1;
+  }
+}
+
+/* Large phones */
+@media (max-width: 600px) {
+  .top-list{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.95);
+    position: fixed;
+    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50rem;
+    text-align: center;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+  }
+  .top-list.active{
+    display: flex;
+  }
+  .menu-icon{
+    display: block;
+  }
+  .logo{
+    width: 80px;
+    height: 60px;
+  }
+  .hero-section{
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+  .hero-section h1{
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+  .hero-section p{
+    font-size: 1.5rem;
+  }
+  .hero-section .lists{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  .nav-btn-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .nav-btn-container li{
+    width: 100%;
+    max-width: 220px;
+    margin: 0.9rem;
+  }
+}
+@media (min-width: 601px) {
+  .footer-content {
+    justify-content: flex-start;
+    margin-left: 5rem; 
+  }
+}
+
+
+/* Small phones */
+@media (max-width: 480px) {
+  body ,html{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  .container{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  .top-bar{
+    padding:1rem;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #theme-toggle{
+    position: relative;
+    z-index: 2000;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .highlight{
+    padding: 1.2rem;
+    box-sizing: border-box;
+  }
+  .footer-content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 2rem;
+    padding: 5rem;
+    box-sizing: border-box;
+  }
+  .contact{
+    margin: 0 auto;
+    width: 100%;
+  }
+  .contact-details{
+    width: 100%;
+  }
+  #contact-form{
+    max-width: 90%;
+  }
+  #contact-form input, #contact-form textarea{
+    width: 100%;
+  }
+  .input label{
+    left: 3rem;
+  }
+}
