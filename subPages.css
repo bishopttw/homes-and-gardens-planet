@@ -3,14 +3,14 @@
 ---------------------------------*/
 :root {
   /* FONT SIZES */
-  --text-sm: 1.2rem;
-  --text-base: 1.6rem;
-  --text-paragraph: 2rem;
-  --text-h5: 2.4rem;
-  --text-h4: 3.2rem;
-  --text-h3: 4rem;
-  --text-h2: 4.8rem;
-  --text-h1: 6.2rem;
+  --text-sm: 0.85rem;
+  --text-base: 1rem;
+  --text-paragraph: 1.1rem;
+  --text-h5: 1.3rem;
+  --text-h4: 1.6rem;
+  --text-h3: 2rem;
+  --text-h2: 2.8rem;
+  --text-h1: 3.5rem;
 
   /* FONT WEIGHTS */
   --font-weight-normal: 400;
@@ -74,7 +74,7 @@ body.light-theme .features div {
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 100%;
 }
 
 body {
@@ -132,10 +132,11 @@ li {
   padding: 1rem 2rem;
   margin-bottom: 3rem;
   position: fixed;
-  width: 80%;
+  width: 100%;
   top: 0;
   z-index: 1000;
   background-color: var(--card-bg);
+  box-sizing: border-box;
 }
 
 .logo {

@@ -1,14 +1,14 @@
 /* ===== TYPOGRAPHY & ROOT VARIABLES ===== */
 :root{
   /* FONT SIZES */
-  --text-sm: 1.2rem;
-  --text-base: 1.6rem;
-  --text-paragraph: 2rem;
-  --text-h5: 2.4rem;
-  --text-h4: 3.2rem;
-  --text-h3: 4rem;
-  --text-h2: 4.8rem;
-  --text-h1: 6.2rem;
+  --text-sm: 0.85rem;
+  --text-base: 1rem;
+  --text-paragraph: 1.1rem;
+  --text-h5: 1.3rem;
+  --text-h4: 1.6rem;
+  --text-h3: 2rem;
+  --text-h2: 2.8rem;
+  --text-h1: 3.5rem;
 
   /* FONT WEIGHTS */
   --font-weight-normal:400;
@@ -61,15 +61,19 @@ body.light-theme{
   list-style: none;
 }
 
-html{ font-size: 62.5%; }
+html, body{
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+html{ font-size: 100%; }
 
 body{
   font-family: var(--font-family);
   color: var(--text);
   background-color: var(--background);
-  /* max-width: 1200px;
-  margin: 0 auto; */
-  padding: 2rem;
+  padding: 0;
+  margin: 0;
 }
 
 /* Headings & text sizing */
@@ -122,14 +126,16 @@ body.light-theme header::after{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 10rem;
+  gap: 2rem;
   padding: 1rem 2.5rem;
   margin-bottom: 3rem;
   background-color: var(--card-bg); 
   position: fixed;
   top: 0;
+  left: 0;
   z-index: 1000;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .logo-title{
@@ -215,6 +221,12 @@ body.light-theme section{
 }
 body.light-theme #theme-toggle i{
   color: black;
+}
+.container{
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 /* ===== HERO SECTION ===== */
@@ -343,9 +355,9 @@ body.light-theme .highlight{
 /* ===== SERVICES ===== */
 #services{
   background-color: var(--background);
-  display: flex;
-  flex-direction: column;
+  display: block;
   margin-bottom: 10rem;
+  padding: 2rem;
 }
 #services h2{
   text-align: center;
@@ -353,18 +365,11 @@ body.light-theme .highlight{
   margin-bottom: 2rem;
 }
 .service-list{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  padding: 2rem 1rem;
-}
-.service-list1{
-  display: flex;
-  justify-content: space-around;
-  gap: 2rem;
-  padding: 2rem 1rem;
+  padding: 1.5rem;
+  justify-items: center;
 }
 
 /* keep yellow boxes — they remain yellow in both themes;
@@ -376,7 +381,7 @@ body.light-theme .highlight{
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 300px;
+  width: 100%;
   min-height: 290px;
   padding: 0.8rem 0.8rem;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -414,7 +419,7 @@ body.light-theme .highlight{
 .btn{
   font-weight: var(--font-weight-normal);
   font-size: var(--text-paragraph);
-  padding: 1.5rem 3rem;
+  padding: 1rem 2rem;
   border-radius: 8px;
   transition: background-color 0.3s ease, border 0.3s ease;
 }
@@ -462,13 +467,13 @@ body.light-theme .highlight{
 }
 
 /* ===== PROJECTS ===== */
-#our\ projects{
+#our-projects{
   background-color: var(--background);
   color: var(--text);
   padding: 4rem 2rem;
   margin-bottom: 5rem;
 }
-#our\ projects h2{
+#our-projects h2{
   text-align: center;
   color: var(--primary-base);
   font-size: var(--text-h3);
@@ -527,20 +532,33 @@ body.light-theme .project-item{
 }
  .footer-content{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: flex-start;
+  gap: 2rem;
+  padding: 1rem;
   margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.contact{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  flex: 1;
 }
 .contact-details{
   display: flex;
   flex-direction: column;
   border: 2px solid var(--primary);
   border-radius: 12px;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   text-align: center;
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
   padding: 1rem 2rem;
+  box-sizing: border-box;
 }
+
 .contact-details p{
   margin-bottom: 1rem;
   font-size: var(--text-h5);
@@ -557,17 +575,21 @@ body.light-theme .project-item{
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
+.email{
+  text-transform: lowercase;
+}
 .send:hover{
   background-color: var(--black);
   color: var(--primary-base);
   border: 1px solid var(--primary-base);
 }
 #contact-form{
-  flex: 2;
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  max-width: 400px;
+  max-width: 100%;
+  width: 100%;
 }
 .input-holder{
   display: flex;
@@ -579,20 +601,28 @@ body.light-theme .project-item{
 .input{
   margin: 2rem 0;
   position: relative;
+  width: 100%;
 }
 .input label{
   position: absolute;
-  transform: translate(-50%);
-  top: 40%;
-  left: 4rem;
+  top: 50%;
+  left: 1.5rem;
+  transform: translateY(-50%);
   font-size: var(--text-base);
   pointer-events: none;
   color: var(--text);
-  margin-bottom: 2rem;
-  transition: 0.5s;
+  transition: 0.3s ease;
+  padding: 0 0.3rem;
 }
+
+.input textarea{
+  height: 120px;
+  padding: 1rem 1.5rem;
+  resize: none;
+}
+
 .input input, .input textarea{
-  width: 360px;
+  width: 100%;
   height: 60px;
   color: var(--primary-base);
   font-size: var(--text-base);
@@ -606,16 +636,16 @@ body.light-theme .project-item{
   top: 0;
   background-color: var(--background);
   font-size: 1.4rem;
+  color: var(--primary-base);
 }
 .input textarea:focus~label, .input textarea:valid~label{
   top: 0;
+  left: 1.2rem;
+  font-size: 1.2rem;
   background-color: var(--background);
-  font-size: 1.4rem;
+  color: var(--primary-base);
 }
-/* #contact-form input:focus, #contact-form textarea:focus{
-  outline: none;
-  box-shadow: 0 0 8px var(--primary-base);
-} */
+
 #contact-form button{
   background-color: var(--primary-base);
   color: var(--black);
